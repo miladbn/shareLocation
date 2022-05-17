@@ -22,6 +22,7 @@ export interface locationMarkerProps {
 }
 
 export interface pinsProps {
+  data: markers;
   marker;
 }
 

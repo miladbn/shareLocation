@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Marker, Popup, useMapEvents } from "react-leaflet";
+import { useMapEvents } from "react-leaflet";
 import { LatLng } from "leaflet";
 import { locationMarkerProps } from "../types";
 
@@ -15,11 +15,7 @@ const LocationMarker: FC<locationMarkerProps> = ({
       setNewPosition(e.latlng);
     },
   });
-  return position === null ? null : (
-    <Marker position={{ lat: position.lat, lng: position.lng }}>
-      <Popup>You are here</Popup>
-    </Marker>
-  );
+  return <></>;
 };
 
 export default LocationMarker;

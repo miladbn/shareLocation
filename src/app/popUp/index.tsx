@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LatLngLiteral } from "leaflet";
+// import { v4 as uuidv4 } from "uuid";
 import MapLocation from "./mapLocation";
 import { popUpProps } from "../types";
 import "./popUp.scss";
@@ -72,13 +72,17 @@ const PopUp: React.FC<popUpProps> = ({
           <button
             className="btn-save"
             onClick={() => {
-              setData(...data, {
-                lat: newPosition.lat,
-                lng: newPosition.lng,
-                name: name,
-                type: type,
-                imgSrc: imgSrc,
-              });
+              setData((prevData: any) => [
+                ...prevData,
+                {
+                  name,
+                  type,
+                  imgSrc,
+                  lat: newPosition.lat,
+                  lng: newPosition.lng,
+                  // id: uuidv4(),
+                },
+              ]);
               setShowPopup(false);
             }}
           >
