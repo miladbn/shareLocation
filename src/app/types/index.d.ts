@@ -1,41 +1,21 @@
-import { LatLngLiteral } from "leaflet";
-export type marker = {
-  lat: number;
+import { LatLng } from "leaflet";
+export type Pin = {
+  id: number;
   lng: number;
+  lat: number;
   name: string;
   type: string;
-  imgSrc: string;
-  id: number;
+  imageUrl: string;
 };
 
-export type markers = Array<marker>;
-
-export interface mapProps {
-  handelOpenPopUp: () => void;
-  setNewPosition: (position: { lat: number; lng: number }) => void;
-  data: markers;
+export interface PinEditorProps {
+  onClose: () => void;
+  onSubmit: () => void;
+  pin: Pin | null;
+  show: boolean;
 }
 
-export interface locationMarkerProps {
-  handelOpenPopUp: () => void;
-  setNewPosition: (position: LatLng) => void;
-}
-
-export interface pinsProps {
-  data: markers;
-  marker;
-}
-
-export interface popUpProps {
-  setShowPopup: (showPopup: boolean) => void;
-  newPosition: LatLngLiteral;
-  setData: any;
-  data: markers;
-}
-
-export interface mapLocationProps {
-  newPosition: LatLngLiteral;
-  name: string;
-  type: string;
-  imgSrc: string;
+export interface MapProps {
+  onClick: (LatLng) => void;
+  pins: Pin[];
 }
