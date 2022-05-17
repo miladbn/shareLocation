@@ -1,9 +1,10 @@
 import { FC } from "react";
-import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
+import { TileLayer, useMapEvents } from "react-leaflet";
 import PinProps from "./pin";
-import "./map.scss";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { showPinEditor } from "../store/slices/pinEditorSlice";
+import "./map.scss";
+
 const Layer: FC = () => {
   const dispatch = useAppDispatch();
   const pins = useAppSelector((state) => state.pins);
@@ -20,6 +21,7 @@ const Layer: FC = () => {
       );
     },
   });
+  console.log(pins);
   return (
     <>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

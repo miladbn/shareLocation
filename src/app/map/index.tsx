@@ -1,7 +1,5 @@
 import { FC } from "react";
-import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
-import PinProps from "./pin";
-import { MapProps } from "../types";
+import { MapContainer } from "react-leaflet";
 import "./map.scss";
 import Layer from "./layer";
 

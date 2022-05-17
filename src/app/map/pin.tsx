@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Marker, Popup } from "react-leaflet";
 import { Pin as PinProps } from "../types";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { useAppDispatch } from "../store/hooks";
 import { showPinEditor } from "../store/slices/pinEditorSlice";
 
 const Pin: FC<PinProps> = ({ id, lng, lat, name, type, imageUrl }) => {

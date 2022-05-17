@@ -1,14 +1,12 @@
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { PinEditorProps } from "../types";
 import { addPin, updatePin } from "../store/slices/pinsSlice";
 import { updatePinEditor } from "../store/slices/pinEditorSlice";
 import MapLocation from "./mapLocation";
 
 const Body: React.FC = () => {
   const pin = useAppSelector((state) => state.pinEditor.pin);
-  const { id, name, type, lat, lng, imageUrl } = pin;
+  const { name, type, lat, lng, imageUrl } = pin;
   const dispatch = useAppDispatch();
-  const action = id === 0 ? addPin : updatePin;
   return (
     <div className="card-body">
       <div className="row">

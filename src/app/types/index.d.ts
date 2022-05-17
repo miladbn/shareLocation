@@ -9,13 +9,10 @@ export type Pin = {
 };
 
 export interface PinEditorProps {
-  onClose: () => void;
-  onSubmit: () => void;
   pin: Pin | null;
   show: boolean;
 }
 
 export interface MapProps {
-  onClick: (LatLng) => void;
   pins: Pin[];
 }

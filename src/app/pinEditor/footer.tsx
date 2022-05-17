@@ -1,7 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { hidePinEditor } from "../store/slices/pinEditorSlice";
-import { addPin } from "../store/slices/pinsSlice";
-import { updatePinEditor } from "../store/slices/pinEditorSlice";
+import { addPin, updatePin } from "../store/slices/pinsSlice";
 
 const Footer: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -14,7 +13,7 @@ const Footer: React.FC = () => {
         onClick={() => {
           if (pin.id === 0) {
             dispatch(addPin({ ...pin }));
-          } else dispatch(updatePinEditor({ ...pin }));
+          } else dispatch(updatePin({ ...pin }));
           dispatch(hidePinEditor());
         }}
       >

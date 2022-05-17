@@ -5,6 +5,7 @@ import Header from "./header";
 import "./popUp.scss";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { hidePinEditor } from "../store/slices/pinEditorSlice";
+
 const PinEditor: React.FC = () => {
   const show = useAppSelector((state) => state.pinEditor.show);
   const dispatch = useAppDispatch();
